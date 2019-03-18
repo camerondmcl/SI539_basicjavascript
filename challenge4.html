@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 4</title>
+    <style>
+    body{
+        margin: 2%;
+        border: 1px solid black;
+        background-color: #b3b3b3;
+    }
+    #image{
+        line-height:325px;
+        width: 388px;
+        height: 325px;
+        border:5px solid black;
+        margin:0 auto;
+        background-image: url('');
+        background-repeat: no-repeat;
+        color:#FFFFFF;
+        text-align: center;
+        background-color: #8e68ff;
+        background-size: 100%;
+        margin-bottom:25px;
+        font-size:150%;
+    }
+    .preview{
+        width:10%;
+        margin-left:17%;
+        border: 10px solid black;
+    }
+    img{
+        width:95%;
+    }
+    h1{
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>Challenge 4</h1>
+        <div id = "image">
+            Hover or tab over/into an image below.
+        </div>
+        <img class = "preview" tabindex = "1"
+            alt = "Her Majesty will see you now"
+            src = "https://i.imgur.com/fXjQgv5.jpg"
+            onfocus = 'update(this)'
+            onblur = 'undo()'
+            onmouseover = 'update(this)'
+            onmouseleave = 'undo()';>
+
+
+        <img class = "preview" tabindex = "2"
+            alt = "So condescending"
+            src = "https://i.imgur.com/FDGiZph.jpg"
+            onfocus = 'update(this)'
+            onblur = 'undo()'
+            onmouseover = 'update(this)'
+            onmouseleave = 'undo()';>
+
+        <img class = "preview" tabindex = "3"
+            src = "https://i.imgur.com/HDuBZcL.jpg?1"
+            alt = "Curled up"
+            onfocus = 'update(this)'
+            onblur = 'undo()'
+            onmouseover = 'update(this)'
+            onmouseleave = 'undo()';>
+
+        <img class = "preview" tabindex = "4"
+            alt = "Extreme close-up"
+            src = "https://i.imgur.com/pXSLOqe.jpg"
+            onfocus = 'update(this)'
+            onblur = 'undo()'
+            onmouseover = 'update(this)'
+            onmouseleave = 'undo()';>
+
+        <img class = "preview" tabindex = "5"
+            alt = "Blurry"
+            src = "https://i.imgur.com/5gI4PRy.jpg"
+            onfocus = 'update(this)'
+            onblur = 'undo()'
+            onmouseover = 'update(this)'
+            onmouseleave = 'undo()';>
+
+        <img class = "preview" tabindex = "6"
+            alt = "'Can you please not'"
+            src = "https://i.imgur.com/4Ou6nyU.jpg"
+            onfocus = 'update(this)'
+            onblur = 'undo()'
+            onmouseover = 'update(this)'
+            onmouseleave = 'undo()';>
+</body>
+<script>
+// I used Two functions here.  Starter idea at:
+// https://codepen.io/ColleenEMc/pen/XmZzWw
+  var defaultText = document.getElementById('image').textContent;
+  var defaultBackground = document.getElementById('image').style.backgroundImage;
+  console.log(defaultText)
+  function update(previewPic){
+    console.log('function update() has been called');
+    let url = previewPic.src;
+    document.getElementById('image').style.backgroundImage = "url('" + url + "')";
+    document.getElementById('image').innerHTML = previewPic.alt;
+  }
+  function undo(){
+    console.log('function undo() has been called');
+    document.getElementById('image').style.backgroundImage = defaultBackground;
+    document.getElementById('image').innerHTML = defaultText;
+  }
+</script>
+</html>
